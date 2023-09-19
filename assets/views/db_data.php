@@ -45,7 +45,7 @@ function login($email,$password){
 
   // $encpass =encodePass($password);
   $db = dbconnect();
-  $qry = "SELECT * FROM member WHERE email='$email' AND password='$password'";
+  $qry = "SELECT  FROM member WHERE email='$email' AND password='$password'";
   $result = mysqli_query($db,$qry);
   if($result){
     foreach($result as $str){
@@ -63,4 +63,8 @@ function login($email,$password){
 function get_time(){
     return date("Y-m-d H:m:s", time());
 }
+
+
+
+
 ?>

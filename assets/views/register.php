@@ -1,7 +1,7 @@
 <?php 
 include_once("top.php");
 include_once("nav.php");
-include_once "membership.php";
+include_once ("membership.php");
 require_once('session.php');
 
 if(isset($_POST['submit'])){
@@ -15,8 +15,12 @@ switch($ret){
     case "success";
     $message = "Register success";
     setsession("username",$username);
-    setsession("email",$email);   
-    header('Location:index.php')
+    setsession("email",$email);
+    if($username == 'Yustave' AND $email == 'yustavelavan@gmail.com'){
+        header('Location:admin.php');
+    }else{
+        header('Location:index.php');
+    }
     ;break; 
     case "Email is already in used";
         $message = "Email is already in used";break;

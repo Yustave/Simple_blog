@@ -13,11 +13,11 @@ $message = "";
 switch($ret){
     case "login success";
         $message = "Login Success";
-        setsession("email",$email); 
-        if($username === 'Yustave' AND $email === 'yustavelavan@gmail.com'){
+        setsession("email",$email);     
+       if(getsession('username') === "Yustave" && $email == 'yustavelavan@gmail.com'){
         header('Location:admin.php');
         }else{ 
-        header('Location:index.php');
+        header('Location:admin.php'); 
     };
         break;
     case "log in fail";
