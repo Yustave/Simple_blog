@@ -1,29 +1,26 @@
 <?php
-include_once("top.php");
-include_once("nav.php");
-include_once("membership.php");
-include_once("post_generator.php");
+include_once("../views/top.php");
 
 if(isset($_POST['submit'])){
     $posttitle =  $_POST["posttitle"];
     $posttype =  $_POST["posttype"];
     $content =  $_POST["postcontent"];
     $writer =  $_POST["postwriter"];
+    $subject =  $_POST["subject"];
     $file = $_FILES['file'];
 
-    $imglink = mt_rand(time(),time()). "_". $_FILES['file']['name'].mt_rand(time(),time());
+    $imglink = mt_rand(time(),time()). "_". $_FILES['file']['name'];
     move_uploaded_file($_FILES['file']['tmp_name'],'../uploads/'.$imglink);
 
 
-    $bol = uploadPost( $posttitle,$posttype,$content,$writer,$imglink);
-    echo $bol ? "true":"false";
+    $bol = uploadPost( $posttitle,$posttype,$content,$writer,$imglink,$subject);
 }
 
 ?>
 
 <div class="container">
 <div class="row">
-    <?php include_once("sideshow_admin.php") ?>
+    <?php include_once("../views/sideshow_admin.php") ?>
     <section class="col-md-9">
         <form action="" method="post" enctype="multipart/form-data" class="md-5 table-boardded p-5">
         <h2>Post Upload</h2>
@@ -37,6 +34,18 @@ if(isset($_POST['submit'])){
             <select type="text" name="posttype" id="posttype" class="form-control english">
                 <option value="1">Free Post</option>
                 <option value="2">Paid Post</option>
+            </select>
+        </div><br>
+
+        <div class="form-group">
+            <label for="subject" class="english">Post Catagory</label>
+            <select type="text" name="subject" id="subject" class="form-control english">
+                <?php
+                $subjects = getallsubject();
+                foreach($subjects as $subject){
+                    echo '<option value="'.$subject["id"].'">'.$subject["name"].'</option>';
+                }
+                ?>
         </div><br>
 
         <div class="form-group">        
@@ -68,7 +77,8 @@ if(isset($_POST['submit'])){
     </div>
 </div>
 
+
 <?php
-include_once ('footer.php');
-include_once("base.php")
+include_once ('../views/footer.php');
+include_once("../views/base.php")
 ?>

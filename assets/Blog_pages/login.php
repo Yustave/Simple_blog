@@ -1,8 +1,5 @@
 <?php 
-// session_start();
-include_once("top.php");
-include_once("nav.php");
-include_once("membership.php");
+include_once("../views/top.php");
 
 if(isset($_POST['submit'])){
     $email= $_POST["email"];
@@ -58,8 +55,8 @@ $message.
 
 
 <?php 
-include_once("footer.php");
-include_once("base.php")
+include_once("../views/footer.php");
+include_once("../views/base.php")
 ?>
 
  

@@ -1,5 +1,8 @@
 <?php 
-include_once 'session.php';
+include_once ('../sysgem/session.php');
+include_once("nav.php");
+include_once("../sysgem/membership.php");
+include_once("../sysgem/post_generator.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

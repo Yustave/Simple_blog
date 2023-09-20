@@ -1,8 +1,5 @@
 <?php 
-include_once("top.php");
-include_once("nav.php");
-include_once ("membership.php");
-require_once('session.php');
+include_once("../views/top.php");
 
 if(isset($_POST['submit'])){
     $username= $_POST["username"];
@@ -67,8 +64,8 @@ $message.
 
 
 <?php 
-include_once("footer.php");
-include_once("base.php")
+include_once("../views/footer.php");
+include_once("../views/base.php")
 ?>
 
  

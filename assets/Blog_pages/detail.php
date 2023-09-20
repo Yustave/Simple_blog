@@ -1,10 +1,6 @@
 <?php
-
-include_once ('session.php');
-include_once ('top.php');
-include_once ('nav.php');
-include_once ('header.php');
-include_once ('post_generator.php');
+include_once("../views/top.php");
+include_once ('../views/header.php');
 
 if(isset($_GET['pid'])){
     $pid = $_GET["pid"];
@@ -26,7 +22,7 @@ if(isset($_GET['pid'])){
 </div>
 
 <?php
-include_once ('footer.php');
-include_once ('base.php');
+include_once ('../views/footer.php');
+include_once ('../views/base.php');
 
 ?>

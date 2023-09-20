@@ -1,7 +1,7 @@
 <?php
 // session_start();
-include_once ('db_data.php');
-include_once ('session.php');
+include_once ('../sysgem/db_data.php');
+include_once ('../sysgem/session.php');
 ?>
 
 <div class="container-fluid bg-primary">
@@ -15,19 +15,19 @@ include_once ('session.php');
       <ul class="navbar-nav ml-auto">
 
         <li class="nav-item">
-          <a class="nav-link active text-white english" aria-current="page" href="#">News</a>
+          <a class="nav-link active text-white english" aria-current="page" href="index.php">News</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white english" href="#">Esport</a>
+          <a class="nav-link text-white english" href="filter_post.php?sid=1">Esport</a>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link text-white english">Politic</a>
+          <a class="nav-link text-white english"  href="filter_post.php?sid=2">Football</a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link text-white english">IT</a>
+          <a class="nav-link text-white english"  href="filter_post.php?sid=3">Basketball</a>
         </li>
 
         <li class="nav-item dropdown">
